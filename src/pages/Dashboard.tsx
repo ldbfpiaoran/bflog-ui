@@ -4,7 +4,44 @@ import schema2component from "@/utils/schema2component";
 const schema = {
     "type": "page",
 
-    "body": {
+    "body": [
+        {
+            "label": "指定删除",
+            "type": "button",
+            "actionType": "dialog",
+            "level": "primary",
+            "className": "m-b-sm",
+            "dialog": {
+                "title": "指定删除",
+                "body": {
+                    "type": "form",
+                    "api": "post:/api/deldnslogbyname",
+                    "body": [
+                        {
+                            "type": "input-text",
+                            "name": "queryname",
+                            "label": "queryname"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "label": "全部删除",
+            "type": "button",
+            "actionType": "dialog",
+            "level": "primary",
+            "className": "m-b-sm",
+            "dialog": {
+                "title": "全部删除",
+                "body": {
+                    "type": "form",
+                    "api": "post:/api/delalldns"
+                }
+            }
+        },
+        {
+
         "autoGenerateFilter": {
             "defaultCollapsed":false
         },
@@ -44,7 +81,7 @@ const schema = {
                 ]
             }
         ]
-    }
+    }]
 };
 
 export default schema2component(schema);

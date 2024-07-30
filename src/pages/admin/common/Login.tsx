@@ -18,8 +18,8 @@ interface LoginProps extends RouteComponentProps<any> {
 @observer
 export default class LoginRoute extends React.Component<LoginProps, any> {
   state = {
-    inputUsername: "admin",
-    inputPassword: "123456",
+    inputUsername: "",
+    inputPassword: "",
   };
 
   handleFormSaved = (value: any) => {
